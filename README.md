@@ -2,8 +2,7 @@
 
 ## Abstract 
 ```
-L'analyse différentielle des pannes (DFA) est une technique cryptographique puissante 
-qui perturbe les calculs cryptographiques et exploite des résultats erronés pour 
+L'analyse différentielle des pannes (DFA) est une technique cryptographique puissante qui perturbe les calculs cryptographiques et exploite des résultats erronés pour 
 déduire des clés secrètes. Au cours de la dernière décennie, de nombreux travaux 
 ont décrit et amélioré les techniques DFA contre les chiffrements par blocs, montrant
 ainsi un besoin inhérent de protéger leurs implémentations. Une solution simple et 
