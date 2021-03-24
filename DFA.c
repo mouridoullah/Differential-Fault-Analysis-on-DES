@@ -135,7 +135,7 @@ bool* xOr(bool p[], bool q[], int n){
 
 	return IP;
 }
-void determinationDEDiffInput(bool* C, bool* Cf){
+void determinationDeDiffInputEtOutput(bool* C, bool* Cf){
 
 	printf("--------------La permutation du chifffré pour Obtenire L16 et R16----------------\n");
 	bool* t = permutationIni(C, 64);
@@ -195,14 +195,14 @@ void determinationDEDiffInput(bool* C, bool* Cf){
 
 	decouperEn6bits(E, R15S1, R15S2, R15S3, R15S4, R15S5, R15S6, R15S7, R15S8);
 
-/*	printf("R15S1 : "); afficherTab(R15S1, 6);
+	printf("R15S1 : "); afficherTab(R15S1, 6);
 	printf("R15S2 : "); afficherTab(R15S2, 6);
 	printf("R15S3 : "); afficherTab(R15S3, 6);
 	printf("R15S4 : "); afficherTab(R15S4, 6);
 	printf("R15S5 : "); afficherTab(R15S5, 6);
 	printf("R15S6 : "); afficherTab(R15S6, 6);
 	printf("R15S7 : "); afficherTab(R15S7, 6);
-	printf("R15S8 : "); afficherTab(R15S8, 6);*/
+	printf("R15S8 : "); afficherTab(R15S8, 6);
 
 	printf("--------------Decoupage en 8 block de 6 bits pour E(R15f) fauté----------------\n");
 	bool* R15S1f = malloc(6*sizeof(bool));
@@ -216,40 +216,40 @@ void determinationDEDiffInput(bool* C, bool* Cf){
 
 	decouperEn6bits(Ef, R15S1f, R15S2f, R15S3f, R15S4f, R15S5f, R15S6f, R15S7f, R15S8f);
 
-/*	printf("R15S1f : "); afficherTab(R15S1f, 6);
+	printf("R15S1f : "); afficherTab(R15S1f, 6);
 	printf("R15S2f : "); afficherTab(R15S2f, 6);
 	printf("R15S3f : "); afficherTab(R15S3f, 6);
 	printf("R15S4f : "); afficherTab(R15S4f, 6);
 	printf("R15S5f : "); afficherTab(R15S5f, 6);
 	printf("R15S6f : "); afficherTab(R15S6f, 6);
 	printf("R15S7f : "); afficherTab(R15S7f, 6);
-	printf("R15S8f : "); afficherTab(R15S8f, 6);*/
+	printf("R15S8f : "); afficherTab(R15S8f, 6);
 
 	printf("----------------------Différence en Input des s-box----------------------\n");
 
-	bool* s1I_1 = xOr(R15S1, R15S1f, 6);
-	printf("s1I_1  : "); afficherTab(s1I_1, 6);
+	bool* sI_1 = xOr(R15S1, R15S1f, 6);
+	printf("sI_1  : "); afficherTab(sI_1, 6);
 
-	bool* s1I_2 = xOr(R15S2, R15S2f, 6);
-	printf("s1I_2  : "); afficherTab(s1I_2, 6);
+	bool* sI_2 = xOr(R15S2, R15S2f, 6);
+	printf("sI_2  : "); afficherTab(sI_2, 6);
 
-	bool* s1I_3 = xOr(R15S3, R15S3f, 6);
-	printf("s1I_3  : "); afficherTab(s1I_3, 6);
+	bool* sI_3 = xOr(R15S3, R15S3f, 6);
+	printf("sI_3  : "); afficherTab(sI_3, 6);
 
-	bool* s1I_4 = xOr(R15S4, R15S4f, 6);
-	printf("s1I_4  : "); afficherTab(s1I_4, 6);
+	bool* sI_4 = xOr(R15S4, R15S4f, 6);
+	printf("sI_4  : "); afficherTab(sI_4, 6);
 
-	bool* s1I_5 = xOr(R15S5, R15S5f, 6);
-	printf("s1I_5  : "); afficherTab(s1I_5, 6);
+	bool* sI_5 = xOr(R15S5, R15S5f, 6);
+	printf("sI_5  : "); afficherTab(sI_5, 6);
 
-	bool* s1I_6 = xOr(R15S6, R15S6f, 6);
-	printf("s1I_6  : "); afficherTab(s1I_6, 6);
+	bool* sI_6 = xOr(R15S6, R15S6f, 6);
+	printf("sI_6  : "); afficherTab(sI_6, 6);
 
-	bool* s1I_7 = xOr(R15S7, R15S7f, 6);
-	printf("s1I_7  : "); afficherTab(s1I_7, 6);
+	bool* sI_7 = xOr(R15S7, R15S7f, 6);
+	printf("sI_7  : "); afficherTab(sI_7, 6);
 
-	bool* s1I_8 = xOr(R15S8, R15S8f, 6);
-	printf("s1I_8  : "); afficherTab(s1I_8, 6);
+	bool* sI_8 = xOr(R15S8, R15S8f, 6);
+	printf("sI_8  : "); afficherTab(sI_8, 6);
 
 	/*-----------------------------------------------------*/
 	printf("--------------Permutation Inverse de P de f pour R16----------------\n");
@@ -268,14 +268,14 @@ void determinationDEDiffInput(bool* C, bool* Cf){
 
 	decouperEn4bits(PR16, R16S1, R16S2, R16S3, R16S4, R16S5, R16S6, R16S7, R16S8);
 
-/*	printf("R16S1 : "); afficherTab(R16S1, 4);
+	printf("R16S1 : "); afficherTab(R16S1, 4);
 	printf("R16S2 : "); afficherTab(R16S2, 4);
 	printf("R16S3 : "); afficherTab(R16S3, 4);
 	printf("R16S4 : "); afficherTab(R16S4, 4);
 	printf("R16S5 : "); afficherTab(R16S5, 4);
 	printf("R16S6 : "); afficherTab(R16S6, 4);
 	printf("R16S7 : "); afficherTab(R16S7, 4);
-	printf("R16S8 : "); afficherTab(R16S8, 4);*/
+	printf("R16S8 : "); afficherTab(R16S8, 4);
 
 	printf("--------------Permutation Inverse de P de f pour R16f--------------------------------\n");
 	bool* PR16f = permutationSimpleInver(Rf, 32);
@@ -293,40 +293,40 @@ void determinationDEDiffInput(bool* C, bool* Cf){
 
 	decouperEn4bits(PR16f, R16S1f, R16S2f, R16S3f, R16S4f, R16S5f, R16S6f, R16S7f, R16S8f);
 
-/*	printf("R16S1f : "); afficherTab(R16S1f, 4);
+	printf("R16S1f : "); afficherTab(R16S1f, 4);
 	printf("R16S2f : "); afficherTab(R16S2f, 4);
 	printf("R16S3f : "); afficherTab(R16S3f, 4);
 	printf("R16S4f : "); afficherTab(R16S4f, 4);
 	printf("R16S5f : "); afficherTab(R16S5f, 4);
 	printf("R16S6f : "); afficherTab(R16S6f, 4);
 	printf("R16S7f : "); afficherTab(R16S7f, 4);
-	printf("R16S8f : "); afficherTab(R16S8f, 4);*/
+	printf("R16S8f : "); afficherTab(R16S8f, 4);
 
 	printf("----------------------Différence en Ouput des s-box----------------------\n");
 
-	bool* s1O_1 = xOr(R16S1, R16S1f, 4);
-	printf("s1O_1  : "); afficherTab(s1O_1, 4);
+	bool* sO_1 = xOr(R16S1, R16S1f, 4);
+	printf("sO_1  : "); afficherTab(sO_1, 4);
 
-	bool* s1O_2 = xOr(R16S2, R16S2f, 4);
-	printf("s1O_2  : "); afficherTab(s1O_2, 4);
+	bool* sO_2 = xOr(R16S2, R16S2f, 4);
+	printf("sO_2  : "); afficherTab(sO_2, 4);
 
-	bool* s1O_3 = xOr(R16S3, R16S3f, 4);
-	printf("s1O_3  : "); afficherTab(s1O_3, 4);
+	bool* sO_3 = xOr(R16S3, R16S3f, 4);
+	printf("sO_3  : "); afficherTab(sO_3, 4);
 
-	bool* s1O_4 = xOr(R16S4, R16S4f, 4);
-	printf("s1O_4  : "); afficherTab(s1O_4, 4);
+	bool* sO_4 = xOr(R16S4, R16S4f, 4);
+	printf("sO_4  : "); afficherTab(sO_4, 4);
 
-	bool* s1O_5 = xOr(R16S5, R16S5f, 4);
-	printf("s1O_5  : "); afficherTab(s1O_5, 4);
+	bool* sO_5 = xOr(R16S5, R16S5f, 4);
+	printf("sO_5  : "); afficherTab(sO_5, 4);
 
-	bool* s1O_6 = xOr(R16S6, R16S6f, 4);
-	printf("s1O_6  : "); afficherTab(s1O_6, 4);
+	bool* sO_6 = xOr(R16S6, R16S6f, 4);
+	printf("sO_6  : "); afficherTab(sO_6, 4);
 
-	bool* s1O_7 = xOr(R16S7, R16S7f, 4);
-	printf("s1O_7  : "); afficherTab(s1O_7, 4);
+	bool* sO_7 = xOr(R16S7, R16S7f, 4);
+	printf("sO_7  : "); afficherTab(sO_7, 4);
 
-	bool* s1O_8 = xOr(R16S8, R16S8f, 4);
-	printf("s1O_8  : "); afficherTab(s1O_8, 4);
+	bool* sO_8 = xOr(R16S8, R16S8f, 4);
+	printf("sO_8  : "); afficherTab(sO_8, 4);
 }
 int main(int argc, char const *argv[])
 {
@@ -342,7 +342,7 @@ int main(int argc, char const *argv[])
 
 	printf("C fauté : "); afficherTab(Cf, 64);
 
-	determinationDEDiffInput(C, Cf);
+	determinationDeDiffInputEtOutput(C, Cf);
 /*-----------------------------------------------------*/
 /*-----------------------------------------------------*/
 
