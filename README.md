@@ -1,4 +1,4 @@
-# Differential-Fault-Analysis-on-DES-Middle-Rounds
+# Differential-Fault-Analysis-on-DES
 
 the program must be run under linux.
 to run
